@@ -1,13 +1,15 @@
 using FinalProjectFiruz.Contexts;
+using FinalProjectFiruz.Helpers;
 using FinalProjectFiruz.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 namespace FinalProjectFiruz
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
 
@@ -24,7 +26,15 @@ namespace FinalProjectFiruz
 
             }).AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
 
+            builder.Services.AddScoped<DbContextInitializer>();
+
             var app = builder.Build();
+
+            var scope = app.Services.CreateScope();
+
+            var initalizer = scope.ServiceProvider.GetRequiredService<DbContextInitializer>();
+
+            await initalizer.InitDatabaseAsync();
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();

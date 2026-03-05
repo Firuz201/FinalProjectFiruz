@@ -2,6 +2,7 @@
 using FinalProjectFiruz.Helpers;
 using FinalProjectFiruz.Models;
 using FinalProjectFiruz.ViewModels.ProductViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace FinalProjectFiruz.Areas.Admin.Controllers;
 [Area("Admin")]
+[Authorize(Roles = "Admin")]
 public class ProductController : Controller
 {
     private readonly AppDbContext _context;

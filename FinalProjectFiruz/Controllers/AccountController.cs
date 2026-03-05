@@ -39,6 +39,13 @@ public class AccountController(UserManager<AppUser> _userManager, SignInManager<
         return RedirectToAction("Index", "Home");
     }
 
+    public async Task<IActionResult> Logout()
+    {
+        await _signInManager.SignOutAsync();
+
+        return RedirectToAction("Login");
+    }
+
     public IActionResult Register()
     {
         return View();
@@ -80,13 +87,13 @@ public class AccountController(UserManager<AppUser> _userManager, SignInManager<
         return RedirectToAction("Index", "Home");
     }
 
-    public async Task <IActionResult> CreateRoles()
-    {
-        await _roleManager.CreateAsync(new() { Name = "Admin" });
-        await _roleManager.CreateAsync(new() { Name = "Member" });
-        await _roleManager.CreateAsync(new() { Name = "Moderator" });
-        await _roleManager.CreateAsync(new() { Name = "Attention" });
+    //public async Task <IActionResult> CreateRoles()
+    //{
+    //    await _roleManager.CreateAsync(new() { Name = "Admin" });
+    //    await _roleManager.CreateAsync(new() { Name = "Member" });
+    //    await _roleManager.CreateAsync(new() { Name = "Moderator" });
+    //    await _roleManager.CreateAsync(new() { Name = "Attention" });
 
-        return Ok("Roles was created");
-    }
+    //    return Ok("Roles was created");
+    //}
 }

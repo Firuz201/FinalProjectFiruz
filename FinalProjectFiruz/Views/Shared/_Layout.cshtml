@@ -127,7 +127,7 @@
                                         </li>
                                     </ul> *@
                                 </li>
-                                <li class="has-sub">
+                                @* <li class="has-sub">
                                     <a href="#">
                                         <span>About</span>
                                     </a>
@@ -143,7 +143,7 @@
                                             </a>
                                         </li>
                                     </ul>
-                                </li>
+                                </li> *@
                                 @* <li class="has-sub">
                                     <a href="#">
                                         <span>Portfolio</span>
@@ -249,24 +249,31 @@
                                     <a href="#">
                                         <span>Contact</span>
                                     </a>
-                                    @* <ul>
-                                        <li>
-                                            <a href="contact-1.html">
-                                                <span>Contact V1</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="contact-2.html">
-                                                <span>Contact V2</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="contact-3.html">
-                                                <span>Contact V3</span>
-                                            </a>
-                                        </li>
-                                    </ul> *@
                                 </li>
+
+                                @if(User.Identity.IsAuthenticated)
+                                {
+                                    <li class="has-sub">
+                                        <a asp-action="Logout" asp-controller="Account">
+                                            <span>@User.Identity.Name</span>
+                                        </a>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li class="has-sub">
+                                        <a asp-action="Login" asp-controller="Account">
+                                            <span>Login</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="has-sub">
+                                        <a asp-action="Register" asp-controller="Account">
+                                            <span>Register</span>
+                                        </a>
+                                    </li>
+                                }
+
 
                                 @* <li class="has-sub">
                                     <a href="shop.html">
