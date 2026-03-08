@@ -59,7 +59,7 @@
                                             <span>$</span>@product.Price
                                         </span>
                                         <div class="shop-button-box">
-                                            <a class="button-product" href="#">Add to cart</a>
+                                            <a asp-action="AddToBasket" asp-controller="Basket" asp-route-productId="@product.Id">Add to cart</a>
                                         </div>
                                     </div>
                                 </div>

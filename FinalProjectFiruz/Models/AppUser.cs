@@ -6,6 +6,7 @@ namespace FinalProjectFiruz.Models
     {
         public string Fullname { get; set; }
 
+        public ICollection<BasketItem> BasketItems { get; set; }
 
     }
 }

@@ -59,6 +59,24 @@ public class AccountController(UserManager<AppUser> _userManager, SignInManager<
             return View(vm);
         }
 
+        var existUser = await _userManager.FindByNameAsync(vm.Username);
+
+        if(existUser is { })
+        {
+            ModelState.AddModelError("Username", "This username is already exist");
+            return View(vm);
+        }
+
+        existUser = await _userManager.FindByEmailAsync(vm.Email);
+
+        if( existUser is { })
+        {
+            ModelState.AddModelError("Email", "This email is already exist");
+            return View(vm);
+        }
+
+        ////_userManager.Users.FirstOrDefault(x => x.Id == "1");
+
         AppUser user = new()
         {
             Fullname = vm.Fullname,

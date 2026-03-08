@@ -1,6 +1,8 @@
+using FinalProjectFiruz.Abstraction;
 using FinalProjectFiruz.Contexts;
 using FinalProjectFiruz.Helpers;
 using FinalProjectFiruz.Models;
+using FinalProjectFiruz.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
@@ -16,6 +18,7 @@ namespace FinalProjectFiruz
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
+            builder.Services.AddScoped<IBasketService, BasketService>();
             builder.Services.AddDbContext<AppDbContext>(options =>
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));

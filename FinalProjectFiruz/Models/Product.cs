@@ -20,6 +20,8 @@ namespace FinalProjectFiruz.Models
 
         public Category Category { get; set; } = null!;
 
+        public ICollection <BasketItem> BasketItems { get; set; }
+
     }
 
 }

@@ -1,4 +1,11 @@
-﻿<!DOCTYPE HTML>
+﻿@using FinalProjectFiruz.Abstraction
+@inject IBasketService _basketService
+@{
+    var basketItems = await _basketService.GetBasketItemsAsync();
+    var totalPrice = basketItems.Sum(x => x.Product.Price * x.Count);
+}
+
+<!DOCTYPE HTML>
 <html lang="en" class="no-js">
 
 <head>
@@ -35,6 +42,11 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="~/assets/images/favicon.png">
 
+
+
+    <!--Cart styles-->
+    <link rel="stylesheet" type="text/css" href="~/assets/css/card.css">
+
 </head>
 
 <body>
@@ -61,38 +73,29 @@
                         </div>
                         <div class="cart-widget">
                             <ul class="mini-cart cart_list product_list_widget">
-                                <li>
-                                    <a href="single-product.html">
-                                        <img alt="product-1" src="~/assets/images/product-1.jpg">Black Armchair
-                                    </a>
-                                    <span class="quantity">
-                                        1 ×
-                                        <span>$35.00</span>
-                                    </span>
-                                </li>
-                                <li>
-                                    <a href="single-product.html">
-                                        <img alt="product-2" src="~/assets/images/product-2.jpg">Armchair
-                                    </a>
-                                    <span class="quantity">
-                                        1 ×
-                                        <span>$35.00</span>
-                                    </span>
-                                </li>
-                                <li>
-                                    <a href="single-product.html">
-                                        <img alt="product-3" src="~/assets/images/product-3.jpg">Bottle
-                                    </a>
-                                    <span class="quantity">
-                                        1 ×
-                                        <span>$2.00</span>
-                                    </span>
-                                </li>
+                                @foreach (var item in basketItems)
+                                {
+                                    <li class="mini-cart-item">
+
+                                        <!-- Кнопка удаления -->
+                                        <a asp-action="RemoveFromBasket" asp-controller="Basket" asp-route-productId="@item.ProductId" class="remove-item">&times;</a>
+
+                                        <a href="single-product.html">
+                                            <img alt="@item.Product.Title" src="~/assets/images/@item.Product.ImagePath">
+                                            @item.Product.Title
+                                        </a>
+
+                                        <span class="quantity">
+                                            @item.Count ×
+                                            <span>$@item.Product.Price</span>
+                                        </span>
+                                    </li>
+                                }
                             </ul>
                             <p class="mini-cart__total total">
                                 <strong>Subtotal:</strong>
-                                <span>$72.00</span>
-                            </p>
+                                <span>$@totalPrice</span>
+                            </p> 
                             <p class="mini-cart__buttons buttons">
                                 <a class="button" href="#">View cart</a>
                                 <a class="button checkout" href="#">Checkout</a>

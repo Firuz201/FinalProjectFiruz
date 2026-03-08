@@ -2924,3 +2924,22 @@ h3.title-section:after {
         right: -118px;
     }
 }
+
+.mini-cart-item {
+    position: relative;
+    padding-left: 18px;
+}
+
+.remove-item {
+    position: absolute;
+    right: 10x;
+    top: 3px;
+    font-size: 18px;
+    color: #999;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+    .remove-item:hover {
+        color: red;
+    }

@@ -4,11 +4,15 @@ namespace FinalProjectFiruz.Models
 {
     public class BasketItem : BaseEntity
     {
-        //public int ProductId { get; set; }
+        public int ProductId { get; set; }
 
-        //public Product Product { get; set; } = null!;
+        public Product Product { get; set; } = null!;
 
-        //public AppUser AppUser
+        public AppUser AppUser { get; set; } = null!;
+
+        public string AppUserId { get; set; } = null!;
+
+        public int Count { get; set; }
 
     }
 }
