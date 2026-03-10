@@ -1,771 +1,337 @@
-﻿
+@* @{
+    Layout = null;
+    ViewData["Title"] = "Admin — Shop Dashboard";
+} *@
 
-<div class="row">
-    <div class="col-md-12 grid-margin">
-        <div class="d-flex justify-content-between flex-wrap">
-            <div class="d-flex align-items-end flex-wrap">
-                <div class="me-md-3 me-xl-5">
-                    <h2>Welcome back,</h2>
-                    <p class="mb-md-0">Your analytics dashboard template.</p>
-                </div>
-                <div class="d-flex">
-                    <i class="mdi mdi-home text-muted hover-cursor"></i>
-                    <p class="text-muted mb-0 hover-cursor">&nbsp;/&nbsp;Dashboard&nbsp;/&nbsp;</p>
-                    <p class="text-primary mb-0 hover-cursor">Analytics</p>
-                </div>
-            </div>
-            <div class="d-flex justify-content-between align-items-end flex-wrap">
-                <button type="button" class="btn btn-light bg-white btn-icon me-3 d-none d-md-block ">
-                    <i class="mdi mdi-download text-muted"></i>
-                </button>
-                <button type="button" class="btn btn-light bg-white btn-icon me-3 mt-2 mt-xl-0">
-                    <i class="mdi mdi-clock-outline text-muted"></i>
-                </button>
-                <button type="button" class="btn btn-light bg-white btn-icon me-3 mt-2 mt-xl-0">
-                    <i class="mdi mdi-plus text-muted"></i>
-                </button>
-                <button class="btn btn-primary mt-2 mt-xl-0">Download report</button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-12 grid-margin stretch-card">
-        <div class="card">
-            <div class="card-body dashboard-tabs p-0">
-                <ul class="nav nav-tabs px-4 border-left-0 border-top-0 border-right-0" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" id="overview-tab" data-bs-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="true">Overview</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="sales-tab" data-bs-toggle="tab" href="#sales" role="tab" aria-controls="sales" aria-selected="false">Sales</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="purchases-tab" data-bs-toggle="tab" href="#purchases" role="tab" aria-controls="purchases" aria-selected="false">Purchases</a>
-                    </li>
-                </ul>
-                <div class="tab-content py-0 px-0 border-left-0 border-bottom-0 border-right-0">
-                    <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
-                        <div class="d-flex flex-wrap justify-content-xl-between">
-                            <div class="d-none d-xl-flex border-md-right flex-grow-1 align-items-center justify-content-left justify-content-md-center px-4 px-md-0 mx-1 mx-md-0 p-3 item">
-                                <div class="icon-box-secondary me-3">
-                                    <i class="mdi mdi-calendar-heart"></i>
-                                </div>
-                                <div class="d-flex flex-column justify-content-around">
-                                    <small class="mb-1 text-muted">Start date</small>
-                                    <div class="dropdown">
-                                        <a class="btn btn-secondary dropdown-toggle p-0 bg-transparent border-0 text-dark shadow-none font-weight-medium" href="#" role="button" id="dropdownMenuLinkA" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <h5 class="mb-0 d-inline-block">26 Jul 2018</h5>
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLinkA">
-                                            <a class="dropdown-item" href="#">12 Aug 2018</a>
-                                            <a class="dropdown-item" href="#">22 Sep 2018</a>
-                                            <a class="dropdown-item" href="#">21 Oct 2018</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-left justify-content-md-center px-4 px-md-0 mx-1 mx-md-0 p-3 item">
-                                <div class="icon-box-secondary me-3">
-                                    <i class="mdi mdi-currency-usd"></i>
-                                </div>
-                                <div class="d-flex flex-column justify-content-around">
-                                    <small class="mb-1 text-muted">Revenue</small>
-                                    <h5 class="me-2 mb-0">$577545</h5>
-                                </div>
-                            </div>
-                            <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-left justify-content-md-center px-4 px-md-0 mx-1 mx-md-0 p-3 item">
-                                <div class="icon-box-secondary me-3">
-                                    <i class="mdi mdi-eye"></i>
-                                </div>
-                                <div class="d-flex flex-column justify-content-around">
-                                    <small class="mb-1 text-muted">Total views</small>
-                                    <h5 class="me-2 mb-0">9833550</h5>
-                                </div>
-                            </div>
-                            <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-left justify-content-md-center px-4 px-md-0 mx-1 mx-md-0 p-3 item">
-                                <div class="icon-box-secondary me-3">
-                                    <i class="mdi mdi-download"></i>
-                                </div>
-                                <div class="d-flex flex-column justify-content-around">
-                                    <small class="mb-1 text-muted">Downloads</small>
-                                    <h5 class="me-2 mb-0">2233783</h5>
-                                </div>
-                            </div>
-                            <div class="d-flex py-3 border-md-right flex-grow-1 align-items-center justify-content-left justify-content-md-center px-4 px-md-0 mx-1 mx-md-0 p-3 item">
-                                <div class="icon-box-secondary me-3">
-                                    <i class="mdi mdi-flag"></i>
-                                </div>
-                                <div class="d-flex flex-column justify-content-around">
-                                    <small class="mb-1 text-muted">Flagged</small>
-                                    <h5 class="me-2 mb-0">3497843</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="sales" role="tabpanel" aria-labelledby="sales-tab">
-                        <div class="d-flex flex-wrap justify-content-xl-between">
-                            <div class="d-none d-xl-flex border-md-right flex-grow-1 align-items-center justify-content-left justify-content-md-center px-4 px-md-0 mx-1 mx-md-0 p-3 item">
-                                <div class="icon-box-secondary me-3">
-                                    <i class="mdi mdi-calendar-heart"></i>
-                                </div>
-                                <div class="d-flex flex-column justify-content-around">
-                                    <small class="mb-1 text-muted">Start date</small>
-                                    <div class="dropdown">
-                                        <a class="btn btn-secondary dropdown-toggle p-0 bg-transparent border-0 text-dark shadow-none font-weight-medium" href="#" role="button" id="dropdownMenuLinkB" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <h5 class="mb-0 d-inline-block">26 Jul 2018</h5>
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLinkB">
-                                            <a class="dropdown-item" href="#">12 Aug 2018</a>
-                                            <a class="dropdown-item" href="#">22 Sep 2018</a>
-                                            <a class="dropdown-item" href="#">21 Oct 2018</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-left justify-content-md-center px-4 px-md-0 mx-1 mx-md-0 p-3 item">
-                                <div class="icon-box-secondary me-3">
-                                    <i class="mdi mdi-currency-usd"></i>
-                                </div>
-                                <div class="d-flex flex-column justify-content-around">
-                                    <small class="mb-1 text-muted">Revenue</small>
-                                    <h5 class="me-2 mb-0">$577545</h5>
-                                </div>
-                            </div>
-                            <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-left justify-content-md-center px-4 px-md-0 mx-1 mx-md-0 p-3 item">
-                                <div class="icon-box-secondary me-3">
-                                    <i class="mdi mdi-eye"></i>
-                                </div>
-                                <div class="d-flex flex-column justify-content-around">
-                                    <small class="mb-1 text-muted">Total views</small>
-                                    <h5 class="me-2 mb-0">9833550</h5>
-                                </div>
-                            </div>
-                            <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-left justify-content-md-center px-4 px-md-0 mx-1 mx-md-0 p-3 item">
-                                <div class="icon-box-secondary me-3">
-                                    <i class="mdi mdi-download"></i>
-                                </div>
-                                <div class="d-flex flex-column justify-content-around">
-                                    <small class="mb-1 text-muted">Downloads</small>
-                                    <h5 class="me-2 mb-0">2233783</h5>
-                                </div>
-                            </div>
-                            <div class="d-flex py-3 border-md-right flex-grow-1 align-items-center justify-content-left justify-content-md-center px-4 px-md-0 mx-1 mx-md-0 p-3 item">
-                                <div class="icon-box-secondary me-3">
-                                    <i class="mdi mdi-flag"></i>
-                                </div>
-                                <div class="d-flex flex-column justify-content-around">
-                                    <small class="mb-1 text-muted">Flagged</small>
-                                    <h5 class="me-2 mb-0">3497843</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="purchases" role="tabpanel" aria-labelledby="purchases-tab">
-                        <div class="d-flex flex-wrap justify-content-xl-between">
-                            <div class="d-none d-xl-flex border-md-right flex-grow-1 align-items-center justify-content-left justify-content-md-center px-4 px-md-0 mx-1 mx-md-0 p-3 item">
-                                <div class="icon-box-secondary me-3">
-                                    <i class="mdi mdi-calendar-heart"></i>
-                                </div>
-                                <div class="d-flex flex-column justify-content-around">
-                                    <small class="mb-1 text-muted">Start date</small>
-                                    <div class="dropdown">
-                                        <a class="btn btn-secondary dropdown-toggle p-0 bg-transparent border-0 text-dark shadow-none font-weight-medium" href="#" role="button" id="dropdownMenuLinkC" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <h5 class="mb-0 d-inline-block">26 Jul 2018</h5>
-                                        </a>
 
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLinkC">
-                                            <a class="dropdown-item" href="#">12 Aug 2018</a>
-                                            <a class="dropdown-item" href="#">22 Sep 2018</a>
-                                            <a class="dropdown-item" href="#">21 Oct 2018</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-left justify-content-md-center px-4 px-md-0 mx-1 mx-md-0 p-3 item">
-                                <div class="icon-box-secondary me-3">
-                                    <i class="mdi mdi-currency-usd"></i>
-                                </div>
-                                <div class="d-flex flex-column justify-content-around">
-                                    <small class="mb-1 text-muted">Revenue</small>
-                                    <h5 class="me-2 mb-0">$577545</h5>
-                                </div>
-                            </div>
-                            <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-left justify-content-md-center px-4 px-md-0 mx-1 mx-md-0 p-3 item">
-                                <div class="icon-box-secondary me-3">
-                                    <i class="mdi mdi-eye"></i>
-                                </div>
-                                <div class="d-flex flex-column justify-content-around">
-                                    <small class="mb-1 text-muted">Total views</small>
-                                    <h5 class="me-2 mb-0">9833550</h5>
-                                </div>
-                            </div>
-                            <div class="d-flex border-md-right flex-grow-1 align-items-center justify-content-left justify-content-md-center px-4 px-md-0 mx-1 mx-md-0 p-3 item">
-                                <div class="icon-box-secondary me-3">
-                                    <i class="mdi mdi-download"></i>
-                                </div>
-                                <div class="d-flex flex-column justify-content-around">
-                                    <small class="mb-1 text-muted">Downloads</small>
-                                    <h5 class="me-2 mb-0">2233783</h5>
-                                </div>
-                            </div>
-                            <div class="d-flex py-3 border-md-right flex-grow-1 align-items-center justify-content-left justify-content-md-center px-4 px-md-0 mx-1 mx-md-0 p-3 item">
-                                <div class="icon-box-secondary me-3">
-                                    <i class="mdi mdi-flag"></i>
-                                </div>
-                                <div class="d-flex flex-column justify-content-around">
-                                    <small class="mb-1 text-muted">Flagged</small>
-                                    <h5 class="me-2 mb-0">3497843</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- PAGE CONTENT -->
+    <main class="content">
+
+      <!-- Page heading -->
+      <div class="page-header fade-up">
+        <div>
+          <div class="page-title">Good morning, Admin</div>
+          <div class="page-subtitle">Here's what's happening in your store today</div>
         </div>
-    </div>
+        @* <div class="header-actions">
+          <button class="btn-ghost">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Export
+          </button>
+          <button class="btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Add Product
+          </button>
+        </div> *@
+      </div>
+
+      <!-- ── STAT CARDS ── -->
+      <div class="stats-grid">
+
+        <div class="stat-card fade-up delay-1">
+          <div class="stat-label">Total Revenue</div>
+          <div class="stat-value">$24,180</div>
+          <div class="stat-meta up">↑ 12.4% vs last month</div>
+          <div class="stat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 100 7h5a3.5 3.5 0 110 7H6"/></svg>
+          </div>
+        </div>
+
+        <div class="stat-card fade-up delay-2">
+          <div class="stat-label">Total Orders</div>
+          <div class="stat-value">384</div>
+          <div class="stat-meta up">↑ 8.1% vs last month</div>
+          <div class="stat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13l-1.5 7h13M10 21a1 1 0 100-2 1 1 0 000 2zm7 0a1 1 0 100-2 1 1 0 000 2z"/></svg>
+          </div>
+        </div>
+
+        <div class="stat-card fade-up delay-3">
+          <div class="stat-label">Products</div>
+          <div class="stat-value">15</div>
+          <div class="stat-meta">3 low stock</div>
+          <div class="stat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+          </div>
+        </div>
+
+        <div class="stat-card fade-up delay-4">
+          <div class="stat-label">Customers</div>
+          <div class="stat-value">1,204</div>
+          <div class="stat-meta down">↓ 2.3% vs last month</div>
+          <div class="stat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+        </div>
+
+      </div>
+      <!-- /stats -->
+
+      <!-- ── REVENUE CHART + TOP PRODUCTS ── -->
+      <div class="grid-2 fade-up delay-2">
+
+        <div class="panel">
+          <div class="panel-header">
+            <span class="panel-title">Revenue Overview</span>
+            <div style="display:flex;gap:10px;align-items:center;">
+              <div class="filter-pill active" style="padding:4px 10px;font-size:.65rem;">12W</div>
+              <div class="filter-pill" style="padding:4px 10px;font-size:.65rem;">6M</div>
+              <div class="filter-pill" style="padding:4px 10px;font-size:.65rem;">1Y</div>
+            </div>
+          </div>
+          <div class="chart-legend">
+            <div class="legend-item"><div class="legend-dot" style="background:#c8870a;"></div>Revenue</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#4a7a9b;"></div>Orders</div>
+          </div>
+          <div class="chart-wrap">
+            <svg id="revenueChart" class="chart-svg" height="180"></svg>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-header">
+            <span class="panel-title">Top Products</span>
+            <span class="panel-action">View all →</span>
+          </div>
+          <div class="top-list">
+
+            <div class="top-item">
+              <div class="top-rank gold">1</div>
+              <div class="top-thumb">
+                <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=80&h=80&fit=crop" alt="Armchair"/>
+              </div>
+              <div class="top-info">
+                <div class="top-name">Armchair</div>
+                <div class="top-sold">84 sold</div>
+              </div>
+              <div class="top-rev">$2,940</div>
+            </div>
+
+            <div class="top-item">
+              <div class="top-rank" style="color:#888;">2</div>
+              <div class="top-thumb">
+                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=80&h=80&fit=crop" alt="Black Armchair"/>
+              </div>
+              <div class="top-info">
+                <div class="top-name">Black Armchair</div>
+                <div class="top-sold">71 sold</div>
+              </div>
+              <div class="top-rev">$2,485</div>
+            </div>
+
+            <div class="top-item">
+              <div class="top-rank" style="color:#888;">3</div>
+              <div class="top-thumb">
+                <img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=80&h=80&fit=crop" alt="Pillow"/>
+              </div>
+              <div class="top-info">
+                <div class="top-name">Pillow</div>
+                <div class="top-sold">60 sold</div>
+              </div>
+              <div class="top-rev">$2,100</div>
+            </div>
+
+            <div class="top-item">
+              <div class="top-rank" style="color:#888;">4</div>
+              <div class="top-thumb">
+                <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=80&h=80&fit=crop" alt="Oak Tray"/>
+              </div>
+              <div class="top-info">
+                <div class="top-name">Oak Tray</div>
+                <div class="top-sold">52 sold</div>
+              </div>
+              <div class="top-rev">$1,820</div>
+            </div>
+
+            <div class="top-item">
+              <div class="top-rank" style="color:#888;">5</div>
+              <div class="top-thumb">
+                <img src="https://images.unsplash.com/photo-1608515517025-c50b6f44e5f1?w=80&h=80&fit=crop" alt="Audio"/>
+              </div>
+              <div class="top-info">
+                <div class="top-name">Audio Speaker</div>
+                <div class="top-sold">200 sold</div>
+              </div>
+              <div class="top-rev">$1,800</div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+      <!-- /chart + top -->
+
+
+
+      <!-- ── BOTTOM 3-COL ── -->
+      <div class="grid-3 fade-up delay-3">
+
+        <!-- Categories breakdown -->
+        <div class="panel">
+          <div class="panel-header">
+            <span class="panel-title">Categories</span>
+            <span class="panel-action">Manage →</span>
+          </div>
+          <div class="cat-list">
+            <div class="cat-row">
+              <div class="cat-row-head"><span class="cat-name">Furniture</span><span class="cat-pct">58%</span></div>
+              <div class="cat-bar-bg"><div class="cat-bar-fill" data-width="58%" style="width:0;"></div></div>
+            </div>
+            <div class="cat-row">
+              <div class="cat-row-head"><span class="cat-name">Audio</span><span class="cat-pct">22%</span></div>
+              <div class="cat-bar-bg"><div class="cat-bar-fill" data-width="22%" style="width:0;background:linear-gradient(90deg,#4a7a9b,#6aaacb)"></div></div>
+            </div>
+            <div class="cat-row">
+              <div class="cat-row-head"><span class="cat-name">Accessories</span><span class="cat-pct">13%</span></div>
+              <div class="cat-bar-bg"><div class="cat-bar-fill" data-width="13%" style="width:0;background:linear-gradient(90deg,#7a6a4a,#a89060)"></div></div>
+            </div>
+            <div class="cat-row">
+              <div class="cat-row-head"><span class="cat-name">Clothing</span><span class="cat-pct">7%</span></div>
+              <div class="cat-bar-bg"><div class="cat-bar-fill" data-width="7%" style="width:0;background:linear-gradient(90deg,#4a6a4a,#6a9060)"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent orders -->
+        <div class="panel">
+          <div class="panel-header">
+            <span class="panel-title">Recent Orders</span>
+            <span class="panel-action">View all →</span>
+          </div>
+          <div class="orders-feed">
+
+            <div class="order-item">
+              <div class="order-dot" style="background:#6dbe82;"></div>
+              <div class="order-info">
+                <div class="order-id">#ORD-8821</div>
+                <div class="order-customer">Sarah K.</div>
+              </div>
+              <div>
+                <div class="order-amount">$70.00</div>
+                <div class="order-time">2 min ago</div>
+              </div>
+            </div>
+
+            <div class="order-item">
+              <div class="order-dot" style="background:var(--amber);"></div>
+              <div class="order-info">
+                <div class="order-id">#ORD-8820</div>
+                <div class="order-customer">James R.</div>
+              </div>
+              <div>
+                <div class="order-amount">$35.00</div>
+                <div class="order-time">18 min ago</div>
+              </div>
+            </div>
+
+            <div class="order-item">
+              <div class="order-dot" style="background:#6dbe82;"></div>
+              <div class="order-info">
+                <div class="order-id">#ORD-8819</div>
+                <div class="order-customer">Maria P.</div>
+              </div>
+              <div>
+                <div class="order-amount">$9.00</div>
+                <div class="order-time">34 min ago</div>
+              </div>
+            </div>
+
+            <div class="order-item">
+              <div class="order-dot" style="background:#e06060;"></div>
+              <div class="order-info">
+                <div class="order-id">#ORD-8818</div>
+                <div class="order-customer">Tom W.</div>
+              </div>
+              <div>
+                <div class="order-amount">$105.00</div>
+                <div class="order-time">1 hr ago</div>
+              </div>
+            </div>
+
+            <div class="order-item">
+              <div class="order-dot" style="background:#6dbe82;"></div>
+              <div class="order-info">
+                <div class="order-id">#ORD-8817</div>
+                <div class="order-customer">Ana L.</div>
+              </div>
+              <div>
+                <div class="order-amount">$35.00</div>
+                <div class="order-time">2 hr ago</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Activity -->
+        <div class="panel">
+          <div class="panel-header">
+            <span class="panel-title">Activity</span>
+          </div>
+          <div class="activity-feed">
+
+            <div class="activity-item">
+              <div class="act-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+              </div>
+              <div class="act-body">
+                <div class="act-text">New product <b>Lounge Chair</b> drafted</div>
+                <div class="act-time">5 min ago</div>
+              </div>
+            </div>
+
+            <div class="activity-item">
+              <div class="act-icon" style="background:rgba(74,140,90,.15);color:#6dbe82;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4"/></svg>
+              </div>
+              <div class="act-body">
+                <div class="act-text"><b>#ORD-8821</b> marked as fulfilled</div>
+                <div class="act-time">12 min ago</div>
+              </div>
+            </div>
+
+            <div class="activity-item">
+              <div class="act-icon" style="background:rgba(192,64,64,.12);color:#e06060;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              </div>
+              <div class="act-body">
+                <div class="act-text"><b>Oak Tray</b> is almost out of stock</div>
+                <div class="act-time">1 hr ago</div>
+              </div>
+            </div>
+
+            <div class="activity-item">
+              <div class="act-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+              </div>
+              <div class="act-body">
+                <div class="act-text">New customer <b>Sarah K.</b> registered</div>
+                <div class="act-time">2 hr ago</div>
+              </div>
+            </div>
+
+            <div class="activity-item">
+              <div class="act-icon" style="background:rgba(74,122,155,.15);color:#6aaccc;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 12V22H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/></svg>
+              </div>
+              <div class="act-body">
+                <div class="act-text">Coupon <b>SUMMER20</b> created</div>
+                <div class="act-time">3 hr ago</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+      <!-- /bottom grid -->
+
+    </main>
+    <!-- /content -->
+
+  </div>
+  <!-- /main -->
+
 </div>
-<div class="row">
-    <div class="col-md-6 col-xl-3 grid-margin stretch-card">
-        <div class="card">
-            <div id="cashSalesCarousel" class="carousel slide card-carousel" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="card-body border-bottom">
-                            <p class="card-title">Cash sales</p>
-                            <div class="row">
-                                <div class="col-6">
-                                    <canvas id="cash-sales-chart"></canvas>
-                                </div>
-                                <div class="col-6">
-                                    <div class="d-flex align-items-center ms-2">
-                                        <h2 class="font-weight-bold mb-0 me-1">30%</h2>
-                                        <i class="mdi mdi-chevron-up text-success icon-md"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="d-flex align-items-center justify-content-between mb-3">
-                                <div>
-                                    <p>Sales last month</p>
-                                    <h2 class="mb-0">8543</h2>
-                                    <div class="d-flex align-items-center mt-2">
-                                        <small>0.321%</small>
-                                        <i class="mdi mdi-chevron-up"></i>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="icon-box-primary icon-box-lg">
-                                        <i class="mdi mdi-wallet"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <h5>Gross sales of July</h5>
-                            <p class="text-muted mb-0">To start a blog, think of a topic about and first brainstorm party is ways to write details</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="card-body border-bottom">
-                            <p class="card-title">Cash sales</p>
-                            <div class="row">
-                                <div class="col-6">
-                                    <canvas id="cash-sales-chart-b"></canvas>
-                                </div>
-                                <div class="col-6">
-                                    <div class="d-flex align-items-center ms-2">
-                                        <h2 class="font-weight-bold mb-0 me-1">41%</h2>
-                                        <i class="mdi mdi-chevron-up text-success icon-md"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="d-flex align-items-center justify-content-between mb-3">
-                                <div>
-                                    <p>Sales last month</p>
-                                    <h2 class="mb-0">1133</h2>
-                                    <div class="d-flex align-items-center mt-2">
-                                        <small>0.387%</small>
-                                        <i class="mdi mdi-chevron-up"></i>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="icon-box-primary icon-box-lg">
-                                        <i class="mdi mdi-wallet"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <h5>Gross sales of August</h5>
-                            <p class="text-muted mb-0">To start a blog, think of a topic about and first brainstorm party is ways to write details</p>
-                        </div>
-                    </div>
-                </div>
-                <a class="carousel-control-prev bg-white" href="#cashSalesCarousel" role="button" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                </a>
-                <a class="carousel-control-next bg-white" href="#cashSalesCarousel" role="button" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6 col-xl-3 grid-margin stretch-card">
-        <div class="card">
-            <div id="monthlyIncomeCarousel" class="carousel slide card-carousel" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="card-body border-bottom">
-                            <p class="card-title">Monthly income</p>
-                            <div class="row">
-                                <div class="col-6">
-                                    <canvas id="monthly-income-chart"></canvas>
-                                </div>
-                                <div class="col-6">
-                                    <div class="d-flex align-items-center ms-2">
-                                        <h2 class="font-weight-bold mb-0 me-1">16%</h2>
-                                        <i class="mdi mdi-chevron-up text-warning icon-md"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="d-flex align-items-center justify-content-between mb-3">
-                                <div>
-                                    <p>Sales income</p>
-                                    <h2 class="mb-0">20087</h2>
-                                    <div class="d-flex align-items-center mt-2">
-                                        <small>0.754%</small>
-                                        <i class="mdi mdi-chevron-up"></i>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="icon-box-warning icon-box-lg">
-                                        <i class="mdi mdi-credit-card"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <h5>Gross sales of January</h5>
-                            <p class="text-muted mb-0">The first is a non technical method which requires the use of adware removal software. Download free </p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="card-body border-bottom">
-                            <p class="card-title">Monthly income</p>
-                            <div class="row">
-                                <div class="col-6">
-                                    <canvas id="monthly-income-chart-b"></canvas>
-                                </div>
-                                <div class="col-6">
-                                    <div class="d-flex align-items-center ms-2">
-                                        <h2 class="font-weight-bold mb-0 me-1">23%</h2>
-                                        <i class="mdi mdi-chevron-up text-warning icon-md"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="d-flex align-items-center justify-content-between mb-3">
-                                <div>
-                                    <p>Sales income</p>
-                                    <h2 class="mb-0">7368</h2>
-                                    <div class="d-flex align-items-center mt-2">
-                                        <small>0.489%</small>
-                                        <i class="mdi mdi-chevron-up"></i>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="icon-box-warning icon-box-lg">
-                                        <i class="mdi mdi-credit-card"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <h5>Gross sales of February</h5>
-                            <p class="text-muted mb-0">The first is a non technical method which requires the use of adware removal software. Download free </p>
-                        </div>
-                    </div>
-                </div>
-                <a class="carousel-control-prev bg-white" href="#monthlyIncomeCarousel" role="button" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                </a>
-                <a class="carousel-control-next bg-white" href="#monthlyIncomeCarousel" role="button" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6 col-xl-3 grid-margin stretch-card">
-        <div class="card">
-            <div id="yearlySalesCarousel" class="carousel slide card-carousel" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="card-body border-bottom">
-                            <p class="card-title">Yearly sales</p>
-                            <div class="row">
-                                <div class="col-6">
-                                    <canvas id="yearly-sales-chart"></canvas>
-                                </div>
-                                <div class="col-6">
-                                    <div class="d-flex align-items-center ms-2">
-                                        <h2 class="font-weight-bold mb-0 me-1">52%</h2>
-                                        <i class="mdi mdi-chevron-down text-danger icon-md"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="d-flex align-items-center justify-content-between mb-3">
-                                <div>
-                                    <p>Purchases</p>
-                                    <h2 class="mb-0">8304</h2>
-                                    <div class="d-flex align-items-center mt-2">
-                                        <small>0.846%</small>
-                                        <i class="mdi mdi-chevron-down"></i>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="icon-box-info icon-box-lg">
-                                        <i class="mdi mdi-cart"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <h5>Gross sales of March</h5>
-                            <p class="text-muted mb-0">While most people enjoy casino gambling, sports betting, lottery and bingo playing for the fun and </p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="card-body border-bottom">
-                            <p class="card-title">Yearly sales</p>
-                            <div class="row">
-                                <div class="col-6">
-                                    <canvas id="yearly-sales-chart-b"></canvas>
-                                </div>
-                                <div class="col-6">
-                                    <div class="d-flex align-items-center ms-2">
-                                        <h2 class="font-weight-bold mb-0 me-1">29%</h2>
-                                        <i class="mdi mdi-chevron-down text-danger icon-md"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="d-flex align-items-center justify-content-between mb-3">
-                                <div>
-                                    <p>Purchases</p>
-                                    <h2 class="mb-0">8543</h2>
-                                    <div class="d-flex align-items-center mt-2">
-                                        <small>0.795%</small>
-                                        <i class="mdi mdi-chevron-down"></i>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="icon-box-info icon-box-lg">
-                                        <i class="mdi mdi-cart"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <h5>Gross sales of April</h5>
-                            <p class="text-muted mb-0">While most people enjoy casino gambling, sports betting, lottery and bingo playing for the fun and </p>
-                        </div>
-                    </div>
-                </div>
-                <a class="carousel-control-prev bg-white" href="#yearlySalesCarousel" role="button" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                </a>
-                <a class="carousel-control-next bg-white" href="#yearlySalesCarousel" role="button" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6 col-xl-3 grid-margin stretch-card">
-        <div class="card">
-            <div id="dailyDepositsCarousel" class="carousel slide card-carousel" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="card-body border-bottom">
-                            <p class="card-title">Daily deposits</p>
-                            <div class="row">
-                                <div class="col-6">
-                                    <canvas id="daily-deposits-chart"></canvas>
-                                </div>
-                                <div class="col-6">
-                                    <div class="d-flex align-items-center ms-2">
-                                        <h2 class="font-weight-bold mb-0 me-1">19%</h2>
-                                        <i class="mdi mdi-chevron-up text-success icon-md"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="d-flex align-items-center justify-content-between mb-3">
-                                <div>
-                                    <p>Security deposits</p>
-                                    <h2 class="mb-0">2388</h2>
-                                    <div class="d-flex align-items-center mt-2">
-                                        <small>0.321%</small>
-                                        <i class="mdi mdi-chevron-up"></i>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="icon-box-success icon-box-lg">
-                                        <i class="mdi mdi-calendar-heart"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <h5>Gross sales of May</h5>
-                            <p class="text-muted mb-0">According to the research firm Frost & Sullivan, the estimated size of the North American used test</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="card-body border-bottom">
-                            <p class="card-title">Daily deposits</p>
-                            <div class="row">
-                                <div class="col-6">
-                                    <canvas id="daily-deposits-chart-b"></canvas>
-                                </div>
-                                <div class="col-6">
-                                    <div class="d-flex align-items-center ms-2">
-                                        <h2 class="font-weight-bold mb-0 me-1">33%</h2>
-                                        <i class="mdi mdi-chevron-up text-success icon-md"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="d-flex align-items-center justify-content-between mb-3">
-                                <div>
-                                    <p>Security deposits</p>
-                                    <h2 class="mb-0">7589</h2>
-                                    <div class="d-flex align-items-center mt-2">
-                                        <small>0.321%</small>
-                                        <i class="mdi mdi-chevron-up"></i>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="icon-box-success icon-box-lg">
-                                        <i class="mdi mdi-calendar-heart"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <h5>Gross sales of June</h5>
-                            <p class="text-muted mb-0">According to the research firm Frost & Sullivan, the estimated size of the North American used test</p>
-                        </div>
-                    </div>
-                </div>
-                <a class="carousel-control-prev bg-white" href="#dailyDepositsCarousel" role="button" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                </a>
-                <a class="carousel-control-next bg-white" href="#dailyDepositsCarousel" role="button" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-7 grid-margin stretch-card">
-        <div class="card">
-            <div class="card-body">
-                <p class="card-title">Cash deposits</p>
-                <p class="mb-4">To start a blog, think of a topic about and first brainstorm party is ways to write details</p>
-                <div id="cash-deposits-chart-legend" class="d-flex justify-content-center pt-3 legend-small"></div>
-                <canvas id="cash-deposits-chart"></canvas>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-5 grid-margin stretch-card">
-        <div class="card">
-            <div class="card-body">
-                <p class="card-title">Total sales</p>
-                <h1>$ 28835</h1>
-                <h4>Gross sales over the years</h4>
-                <p class="text-muted">Today, many people rely on computers to do homework, work, and create or store useful information. Therefore, it is important </p>
-                <div id="total-sales-chart-legend" class="legend-small"></div>
-            </div>
-            <canvas id="total-sales-chart"></canvas>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-12 grid-margin stretch-card">
-        <div class="card">
-            <div class="card-body">
-                <p class="card-title">Recent Purchases</p>
-                <div class="table-responsive">
-                    <table id="recent-purchases-listing" class="table">
-                        <thead>
-                            <tr>
-                                <th>Name</th>
-                                <th>Status report</th>
-                                <th>Office</th>
-                                <th>Price</th>
-                                <th>Date</th>
-                                <th>Gross amount</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Jeremy Ortega</td>
-                                <td>Levelled up</td>
-                                <td>Catalinaborough</td>
-                                <td>$790</td>
-                                <td>06 Jan 2018</td>
-                                <td>$2274253</td>
-                            </tr>
-                            <tr>
-                                <td>Alvin Fisher</td>
-                                <td>Ui design completed</td>
-                                <td>East Mayra</td>
-                                <td>$23230</td>
-                                <td>18 Jul 2018</td>
-                                <td>$83127</td>
-                            </tr>
-                            <tr>
-                                <td>Emily Cunningham</td>
-                                <td>support</td>
-                                <td>Makennaton</td>
-                                <td>$939</td>
-                                <td>16 Jul 2018</td>
-                                <td>$29177</td>
-                            </tr>
-                            <tr>
-                                <td>Minnie Farmer</td>
-                                <td>support</td>
-                                <td>Agustinaborough</td>
-                                <td>$30</td>
-                                <td>30 Apr 2018</td>
-                                <td>$44617</td>
-                            </tr>
-                            <tr>
-                                <td>Betty Hunt</td>
-                                <td>Ui design not completed</td>
-                                <td>Lake Sandrafort</td>
-                                <td>$571</td>
-                                <td>25 Jun 2018</td>
-                                <td>$78952</td>
-                            </tr>
-                            <tr>
-                                <td>Myrtie Lambert</td>
-                                <td>Ui design completed</td>
-                                <td>Cassinbury</td>
-                                <td>$36</td>
-                                <td>05 Nov 2018</td>
-                                <td>$36422</td>
-                            </tr>
-                            <tr>
-                                <td>Jacob Kennedy</td>
-                                <td>New project</td>
-                                <td>Cletaborough</td>
-                                <td>$314</td>
-                                <td>12 Jul 2018</td>
-                                <td>$34167</td>
-                            </tr>
-                            <tr>
-                                <td>Ernest Wade</td>
-                                <td>Levelled up</td>
-                                <td>West Fidelmouth</td>
-                                <td>$484</td>
-                                <td>08 Sep 2018</td>
-                                <td>$50862</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-4 grid-margin grid-margin-md-0 stretch-card">
-        <div class="card border-0 bg-primary text-white">
-            <div id="downloads-carousel" class="carousel slide card-carousel" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="card-body pb-0">
-                            <p class="card-title text-white">Downloads</p>
-                            <h1>8543</h1>
-                            <h4>Growth 58%</h4>
-                        </div>
-                        <canvas height="110" id="downloads-chart-a"></canvas>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="card-body pb-0">
-                            <p class="card-title text-white">Uploads</p>
-                            <h1>4533</h1>
-                            <h4>Growth 32%</h4>
-                        </div>
-                        <canvas height="110" id="downloads-chart-b"></canvas>
-                    </div>
-                </div>
-                <a class="carousel-control-prev control-light" href="#downloads-carousel" role="button" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                </a>
-                <a class="carousel-control-next control-light" href="#downloads-carousel" role="button" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4 grid-margin grid-margin-md-0 stretch-card">
-        <div class="card border-0 bg-warning text-white">
-            <div id="feedbacks-carousel" class="carousel slide card-carousel" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="card-body pb-0">
-                            <p class="card-title text-white">feedbacks</p>
-                            <h1>3568</h1>
-                            <h4>Growth 12%</h4>
-                        </div>
-                        <canvas height="110" id="feedbacks-chart-a"></canvas>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="card-body pb-0">
-                            <p class="card-title text-white">feedbacks</p>
-                            <h1>8290</h1>
-                            <h4>Growth 11%</h4>
-                        </div>
-                        <canvas height="110" id="feedbacks-chart-b"></canvas>
-                    </div>
-                </div>
-                <a class="carousel-control-prev control-light" href="#feedbacks-carousel" role="button" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                </a>
-                <a class="carousel-control-next control-light" href="#feedbacks-carousel" role="button" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4 grid-margin grid-margin-md-0 stretch-card">
-        <div class="card border-0 bg-success text-white">
-            <div id="customers-carousel" class="carousel slide card-carousel" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="card-body pb-0">
-                            <p class="card-title text-white">customers</p>
-                            <h1>4567</h1>
-                            <h4>Growth 31%</h4>
-                        </div>
-                        <canvas height="110" id="customers-chart-a"></canvas>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="card-body pb-0">
-                            <p class="card-title text-white">Users</p>
-                            <h1>1782</h1>
-                            <h4>Growth 62%</h4>
-                        </div>
-                        <canvas height="110" id="customers-chart-b"></canvas>
-                    </div>
-                </div>
-                <a class="carousel-control-prev control-light" href="#customers-carousel" role="button" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                </a>
-                <a class="carousel-control-next control-light" href="#customers-carousel" role="button" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
+<!-- /layout -->
 

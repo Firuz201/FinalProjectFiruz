@@ -7,5 +7,8 @@ namespace FinalProjectFiruz.ViewModels.HomeViewModels
     {
         public List<ProductGetVM> Products { get; set; }
         public List<CategoryGetVM> Categories { get; set; }
+
+        public int? SelectedCategoryId { get; set; }
+
     }
 }

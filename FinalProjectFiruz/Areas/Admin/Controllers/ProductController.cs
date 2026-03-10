@@ -1,6 +1,8 @@
 ﻿using FinalProjectFiruz.Contexts;
 using FinalProjectFiruz.Helpers;
 using FinalProjectFiruz.Models;
+using FinalProjectFiruz.ViewModels.CategoryViewModels;
+using FinalProjectFiruz.ViewModels.HomeViewModels;
 using FinalProjectFiruz.ViewModels.ProductViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -24,10 +26,14 @@ public class ProductController : Controller
         folderPath = Path.Combine(_environment.WebRootPath, "assets", "images");
     }
 
-    public async Task <IActionResult> Index()
-
+    public async Task <IActionResult> Index(int? categoryId)
     {
-        var products = await _context.Products.Select(product => new ProductGetVM()
+        var query = _context.Products.AsQueryable();
+
+        if (categoryId.HasValue)
+            query = query.Where(p => p.CategoryId == categoryId);
+
+        var products = await query.Select(product => new ProductGetVM()
         {
             Id = product.Id,
             Title = product.Title,
@@ -39,7 +45,22 @@ public class ProductController : Controller
             Rating = product.Rating,
             
         }).ToListAsync();
-        return View(products);
+
+        var categories = await _context.Categories.Select(category => new CategoryGetVM()
+        {
+            Id = category.Id,
+            Name = category.Name
+        }).ToListAsync();
+
+        HomeVM vm = new HomeVM
+        {
+            Products = products,
+            Categories = categories,
+            SelectedCategoryId = categoryId
+
+        };
+
+        return View(vm);
     }
 
     public async Task<IActionResult> Create()
@@ -135,7 +156,7 @@ public class ProductController : Controller
 
     public async Task<IActionResult> Delete(int id)
     {
-        var product = await _context.Products.FindAsync(id); 
+        var product = await _context.Products.FindAsync(id);
 
         if (product is null)
             return NotFound();

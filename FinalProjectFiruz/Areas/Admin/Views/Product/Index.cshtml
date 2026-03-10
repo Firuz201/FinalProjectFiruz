@@ -1,6 +1,148 @@
-﻿@model List<ProductGetVM>
+﻿@using FinalProjectFiruz.ViewModels.HomeViewModels
+@model HomeVM
 
-<div class="container"> 
+<!-- ── PRODUCTS TABLE ── -->
+<div class="panel fade-up" style="margin-bottom:20px;">
+    <div class="panel-header">
+        <span class="panel-title">All Products</span>
+        <div style="display:flex;gap:8px;align-items:center;">
+            <div class="filter-bar" style="margin:0;">
+
+                <a asp-action="Index">
+                    <div class="filter-pill @(Model.SelectedCategoryId == null ? "active" : "")">
+                        All
+                    </div>
+                </a>
+
+                @foreach (var category in Model.Categories)
+                {
+                    <a asp-action="Index" asp-route-categoryId="@category.Id">
+                        <div class="filter-pill @(Model.SelectedCategoryId == category.Id ? "active" : "")">
+                            @category.Name
+                        </div>
+                    </a>
+                }
+
+            </div>
+            <a asp-area="Admin"
+               asp-controller="Product"
+               asp-action="Create"
+               class="btn-primary"
+               style="padding:7px 14px; display:inline-flex; align-items:center; gap:6px;">
+
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                </svg>
+
+                New
+            </a>
+        </div>
+    </div>
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+@*                     <th>Stock</th>
+ *@                    @* <th>Status</th> *@
+                    <th>Rating</th>
+@*                     <th>Sales</th>
+ *@                    <th style="text-align:right;">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var product in Model.Products)
+                {
+                    <tr>
+                    <td>
+                        <div class="product-cell">
+                            <div class="product-thumb">
+                                    <img src="~/assets/images/@product.ImagePath" alt="Armchair" />
+                            </div>
+                            <div>
+                                <div class="product-name">@product.Title</div>
+                                <div class="product-cat">@product.CategoryName</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>$@product.Price</td>
+                    @* <td>42</td> *@
+                    @* <td><span class="badge badge-success">Active</span></td> *@
+                        <td class="star-rating">
+                            <span style="width:@((product.Rating / 5.0) * 100)%">
+                                Rated
+                                <strong class="rating">@product.Rating</strong>
+                                out of 5
+                            </span>
+                        </td>                    
+                        @* <td>84</td> *@
+                    <td>
+                        <div class="row-actions" style="justify-content:flex-end;">
+                                <!--<button class="row-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg></button>-->
+                                <form asp-action="Update" asp-route-id="@product.Id" method="post">
+                                    <button type="submit" class="row-btn">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                            <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7" />
+                                            <path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z" />
+                                        </svg>
+                                    </button>
+                                </form>
+
+                                <form asp-action="Delete" asp-route-id="@product.Id" method="post">
+                                    <button type="submit" class="row-btn">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                            <polyline points="3 6 5 6 21 6" />
+                                            <path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6m3 0V4a1 1 0 011-1h4a1 1 0 011 1v2" />
+                                        </svg>
+                                    </button>
+                                </form>
+                            </div>
+                    </td>
+                </tr>
+
+                }
+                
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- /table -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@* <div class="container"> 
 
 	<div class="row">
 
@@ -50,4 +192,4 @@
 
 	</div>
 
-</div>
+</div> *@

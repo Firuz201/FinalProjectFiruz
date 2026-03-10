@@ -1,4 +1,4 @@
-﻿@using FinalProjectFiruz.Models
+﻿﻿@using FinalProjectFiruz.Models
 @model ProductCreateVM
 
 <div class="container">
@@ -45,13 +45,13 @@
 
 
             <div class="form-group">
-            <select asp-for="CategoryId" class="form-control" asp-items="@ViewBag.Categories"> 
-                @* @foreach(Category category in ViewBag.Categories)
+                <select asp-for="CategoryId" class="form-control" asp-items="@ViewBag.Categories">
+                    @* @foreach(Category category in ViewBag.Categories)
                 {
                     <option value="@category.Id">@category.Name</option>
                 } *@
-            </select>
-            <span asp-validation-for="CategoryId" class="text-danger"></span>
+                </select>
+                <span asp-validation-for="CategoryId" class="text-danger"></span>
             </div>
 
             <button type="submit" class="btn btn-primary">Submit</button>
@@ -63,5 +63,5 @@
 
 
 @section Scripts {
-	<partial name="_ValidationScriptsPartial"></partial>
+    <partial name="_ValidationScriptsPartial"></partial>
 }

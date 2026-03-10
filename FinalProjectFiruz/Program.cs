@@ -20,7 +20,7 @@ namespace FinalProjectFiruz
 
             builder.Services.AddScoped<IBasketService, BasketService>();
 
-            builder.Services.AddScoped<IEmailService, EmailServices>();
+            builder.Services.AddScoped<IEmailService, EmailService>();
             builder.Services.AddDbContext<AppDbContext>(options =>
             {
                 options.UseSqlServer(builder.Configuration.GetConnectionString("Default"));
