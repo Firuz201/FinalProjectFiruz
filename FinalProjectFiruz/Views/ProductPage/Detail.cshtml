@@ -1,4 +1,4 @@
-﻿@* @using FinalProjectFiruz.ViewModels.ProductViewModels
+﻿@using FinalProjectFiruz.ViewModels.ProductViewModels
 @model ProductGetVM
 
 <!-- wrapper -->
@@ -8,28 +8,46 @@
         <div class="row">
             <div class="col-md-9">
                 <div class="product-single-image">
-                    <img alt="image" src="~/assets/images/single-product-1.jpg" />
+                    <img alt="image" src="~/assets/images/@Model.ImagePath" />
                 </div>
 
                 <div class="product-single-info">
-                    <h3 class="product-single-title">Bottle</h3>
-                    <div class="star-rating">
-                        <span style="width:90%">
-                            Rated
-                            <strong class="rating">4.50</strong>
-                            out of 5
+                <h3 class="product-single-title">@Model.Title</h3>
+                <div class="star-rating">
+                        <span style="width:@((Model.Rating/5.0)*100)%">
+                            Rated <strong class="rating">@Model.Rating</strong> out of 5
                         </span>
                     </div>
+
                     <span class="shop-price">
-                        <span>$</span>9.00
+                        <span>$</span>@Model.Price
                     </span>
-                    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-                    <div class="shop-qty">
-                        <button class="minus"></button>
-                        <input type="number" step="1" min="1" max="50" name="quantity" value="1" title="number" size="4" class="qty">
-                        <button class="plus"></button>
-                    </div>
-                    <a class="button-product" href="#">Add to cart</a>
+
+                    <p>@Model.Description</p>
+
+                    <form asp-action="AddToBasket" asp-controller="Basket" method="post">
+
+                        <input type="hidden" name="productId" value="@Model.Id" />
+
+                        <div class="shop-qty">
+                            <button type="button" class="minus"></button>
+
+                            <input type="number"
+                                   step="1"
+                                   min="1"
+                                   max="50"
+                                   name="count"
+                                   value="1"
+                                   class="qty">
+
+                            <button type="button" class="plus"></button>
+                        </div>
+
+                        <button type="submit" class="button-product">
+                            Add to cart
+                        </button>
+
+                    </form>
 
                 </div>
 
@@ -271,4 +289,3 @@
     </div>
 </div>
 <!-- /wrapper -->
- *@

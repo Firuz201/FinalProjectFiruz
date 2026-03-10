@@ -16,7 +16,7 @@ public class BasketController(AppDbContext _context, IBasketService _basketServi
         var basketItems = await _basketService.GetBasketItemsAsync();
         return View(basketItems);
     }
-    public async Task<IActionResult> AddToBasket(int productId)
+    public async Task<IActionResult> AddToBasket(int productId, int count)
     {
         var isExistProduct = await _context.Products.AnyAsync(x => x.Id == productId);
 
@@ -30,12 +30,12 @@ public class BasketController(AppDbContext _context, IBasketService _basketServi
         if (!isExistUser)
             return BadRequest();
 
-        var existBasketItem = await _context.BasketItems.FirstOrDefaultAsync(x => x.AppUserId == userId && x.ProductId == productId);
+        var existBasketItem = await _context.BasketItems
+            .FirstOrDefaultAsync(x => x.AppUserId == userId && x.ProductId == productId);
 
-        if(existBasketItem is { })
+        if (existBasketItem is not null)
         {
-            existBasketItem.Count++;
-
+            existBasketItem.Count += count;
             _context.Update(existBasketItem);
         }
         else
@@ -43,14 +43,13 @@ public class BasketController(AppDbContext _context, IBasketService _basketServi
             BasketItem item = new()
             {
                 ProductId = productId,
-                Count = 1,
+                Count = count,
                 AppUserId = userId!
             };
 
             await _context.BasketItems.AddAsync(item);
         }
 
-            
         await _context.SaveChangesAsync();
 
         return RedirectToAction("Index", "Home");

@@ -34,7 +34,10 @@
                         @foreach(var product in Model.Products)
                         {
                             <div class="cbp-item product">
-                                <a class="product-images" href="single-product.html">
+                                <a class="product-images"
+                                   asp-controller="ProductPage"
+                                   asp-action="Detail"
+                                   asp-route-id="@product.Id">
                                     <div class="shop-first-image" style="height:250px; display:flex; align-items:center; justify-content:center;">
                                         <img src="~/assets/images/@product.ImagePath"
                                              alt="image"
@@ -49,7 +52,11 @@
                                 <div class="shop-product-details">
                                     <div class="shop-product-details-container">
                                         <h4 class="shop-product-title">
-                                            <a href="single-product.html">@product.Title</a>
+                                            <a asp-controller="ProductPage"
+                                               asp-action="Detail"
+                                               asp-route-id="@product.Id">
+                                                @product.Title
+                                            </a>
                                         </h4>
                                         <div class="star-rating">
                                             <span style="width:@((product.Rating / 5.0) * 100)%">
