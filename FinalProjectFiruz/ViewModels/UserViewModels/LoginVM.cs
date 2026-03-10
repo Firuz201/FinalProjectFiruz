@@ -10,4 +10,5 @@ public class LoginVM
     [Required, DataType(DataType.Password)]
     public string Password { get; set; } = string.Empty;
 
+    public bool IsRemember { get; set; }
 }

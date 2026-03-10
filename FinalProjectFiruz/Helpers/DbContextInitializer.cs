@@ -10,6 +10,7 @@ public class DbContextInitializer
     private readonly UserManager<AppUser> _userManager;
     private readonly IConfiguration _configuration;
     private readonly AdminVM _admin;
+    private readonly ModeratorVM _moderator;
 
 
     public DbContextInitializer(RoleManager<IdentityRole> roleManager, UserManager<AppUser> userManager, IConfiguration configuration)
@@ -19,12 +20,15 @@ public class DbContextInitializer
         _configuration=configuration;
 
         _admin = _configuration.GetSection("AdminSettings").Get<AdminVM>() ?? new();
+        _moderator = _configuration.GetSection("ModeratorSettings").Get<ModeratorVM>() ?? new();
+
     }
 
     public async Task InitDatabaseAsync()
     {
         await CreateRolesAsync();
         await CreateAdminAsync ();
+        await CreateModeratorAsync();
     }
 
     private async Task CreateAdminAsync()
@@ -41,6 +45,23 @@ public class DbContextInitializer
         if (result.Succeeded)
         {
             await _userManager.AddToRoleAsync(admin, "Admin");
+        }
+    }
+
+    private async Task CreateModeratorAsync()
+    {
+        var moderator = new AppUser()
+        {
+            Email = _moderator.Email,
+            UserName = _moderator.UserName,
+            Fullname = _moderator.Fullname
+        };
+
+        var result = await _userManager.CreateAsync(moderator, _moderator.Password);
+
+        if (result.Succeeded)
+        {
+            await _userManager.AddToRoleAsync(moderator, "Moderator");
         }
     }
 

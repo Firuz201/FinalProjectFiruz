@@ -97,7 +97,7 @@
                                 <span>$@totalPrice</span>
                             </p> 
                             <p class="mini-cart__buttons buttons">
-                                <a class="button" href="#">View cart</a>
+                                <a class="button" asp-action="Index" asp-controller="Basket">View cart</a>
                                 <a class="button checkout" href="#">Checkout</a>
                             </p>
                         </div>
@@ -109,7 +109,7 @@
                         <div id="glacier_menu">
                             <ul>
                                 <li class="has-sub">
-                                    <a href="#">
+                                    <a asp-action="Index" asp-controller="Home">
                                         <span>Home</span>
                                     </a>
                                     @* <ul>
@@ -261,6 +261,13 @@
                                             <span>@User.Identity.Name</span>
                                         </a>
                                     </li>
+
+                                    @if(User.IsInRole("Admin"))
+                                    {
+                                        <li>
+                                            <a class ="dropdown-item" asp-action="Index" asp-controller="Dashboard" asp-area="Admin">Admin panel</a>
+                                        </li>
+                                    }
                                 }
                                 else
                                 {

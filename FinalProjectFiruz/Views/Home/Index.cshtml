@@ -1,5 +1,6 @@
-﻿@using FinalProjectFiruz.ViewModels.ProductViewModels
-@model List<ProductGetVM>
+﻿@using FinalProjectFiruz.ViewModels.HomeViewModels
+@using FinalProjectFiruz.ViewModels.ProductViewModels
+@model HomeVM
 <!-- wrapper -->
 <div id="wrapper">
 
@@ -16,9 +17,7 @@
             <div class="row">
                 <div class="col-md-9">
                     <h1 class="page-title">Shop</h1>
-                    <p class="shop-result-count">
-                        Showing 1-9 of 15 results
-                    </p>
+                    
                     <form class="shop-ordering" method="get">
                         <select class="orderby" name="orderby">
                             <option selected='selected' value="menu_order">Default sorting</option>
@@ -32,15 +31,19 @@
 
                     <div id="grid-shop" class="cbp shop-products">
 
-                        @foreach(var product in Model)
+                        @foreach(var product in Model.Products)
                         {
                             <div class="cbp-item product">
                                 <a class="product-images" href="single-product.html">
-                                    <div class="shop-first-image">
-                                        <img alt="image" src="~/assets/images/@product.ImagePath" />
+                                    <div class="shop-first-image" style="height:250px; display:flex; align-items:center; justify-content:center;">
+                                        <img src="~/assets/images/@product.ImagePath"
+                                             alt="image"
+                                             style="max-height:100%; max-width:100%; object-fit:contain;" />
                                     </div>
-                                    <div class="shop-second-image">
-                                        <img alt="image" src="~/assets/images/@product.SecondImagePath" />
+                                    <div class="shop-second-image" style="height:250px; display:flex; align-items:center; justify-content:center;">
+                                        <img src="~/assets/images/@product.SecondImagePath"
+                                             alt="image"
+                                             style="max-height:100%; max-width:100%; object-fit:contain;" />
                                     </div>
                                 </a>
                                 <div class="shop-product-details">
@@ -86,27 +89,16 @@
                         <div class="sidebar-box">
                             <h1 class="sidebar-title">Product categories</h1>
                             <ul class="product-categories">
-                                <li>
-                                    <a href="#">Albums</a>
-                                </li>
-                                <li>
-                                    <a href="#">Clothing</a>
-                                </li>
-                                <li>
-                                    <a href="#">Hoodies</a>
-                                </li>
-                                <li>
-                                    <a href="#">Music</a>
-                                </li>
-                                <li>
-                                    <a href="#">Posters</a>
-                                </li>
-                                <li>
-                                    <a href="#">Singles</a>
-                                </li>
-                                <li>
-                                    <a href="#">Uncategorized</a>
-                                </li>
+                                @foreach (var category in Model.Categories)
+                                {
+                                    <li>
+                                        <a asp-action="Index" asp-route-categoryId="@category.Id">
+                                            @category.Name
+                                        </a>
+                                    </li>
+                                }
+                                
+                                
                             </ul>
                         </div>
                         <div class="sidebar-box">
